@@ -1,6 +1,6 @@
 # QShare
 
-## Running Web-app:
+## Running App:
 
 ```
 cd app

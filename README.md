@@ -3,7 +3,7 @@
 ## Running Web-app:
 
 ```
-cd web-app
+cd app
 npm install
 npm run dev
 ```

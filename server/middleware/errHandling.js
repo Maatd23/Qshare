@@ -20,6 +20,10 @@ module.exports = (err, req, res, next) => {
       message = `password is required`;
       status = 400;
       break;
+    case "NotFound":
+      message = "Data not found";
+      status = 404;
+      break;
     default:
       break;
   }

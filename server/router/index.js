@@ -13,4 +13,5 @@ router.post("/register", UserController.register);
 router.use(authentication);
 router.get("/orders", OrderController.getOrder);
 router.post("/orders", OrderController.addOrder);
+router.get("/order/:orderId", OrderController.getOrder);
 module.exports = router;

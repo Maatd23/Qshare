@@ -32,6 +32,19 @@ class OrderController {
       next(error);
     }
   }
+  static async getOneOrder(req, res, next) {
+    const { orderId } = req.params;
+    try {
+      const findOrder = await Order.findByPk(orderId);
+
+      if (!findOrder) throw { name: "NotFound" };
+
+      res.status(200).json(findOrder);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
 }
 
 module.exports = OrderController;

@@ -12,4 +12,5 @@ router.post("/login", UserController.login);
 router.post("/register", UserController.register);
 router.use(authentication);
 router.get("/orders", OrderController.getOrder);
+router.post("/orders", OrderController.addOrder);
 module.exports = router;

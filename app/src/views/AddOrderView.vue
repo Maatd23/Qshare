@@ -3,11 +3,7 @@
     <div class="flex h-full items-center justify-center bg-white shadow-md">
       <div class="flex items-center justify-center p-12">
         <div class="mx-auto w-full max-w-[550px]">
-          <form
-            @submit.prevent="
-              inputOrder({ productName: productName, price: price, quantity: quantity })
-            "
-          >
+          <form @submit.prevent="inputOrder">
             <div class="mb-5">
               <label for="productName" class="mb-3 block text-base font-medium text-[#07074D]">
                 Product Name
@@ -68,6 +64,8 @@
 </template>
 
 <script>
+import { mapActions } from 'pinia'
+import { useOrderStore } from '../stores/orderStore'
 export default {
   data() {
     return {
@@ -77,8 +75,13 @@ export default {
     }
   },
   methods: {
-    inputOrder(orderData) {
-      console.log('Order data:', orderData)
+    ...mapActions(useOrderStore, ['addOrder']),
+    inputOrder() {
+      this.addOrder({
+        productName: this.productName,
+        price: this.price,
+        stock: this.stock
+      })
     }
   }
 }

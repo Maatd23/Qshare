@@ -143,6 +143,7 @@
         <div
           class="group-hover:bg-white/10 w-full group-active:scale-95 self-stretch pl-2 rounded flex items-center space-x-2 transition-all duration-200 dark:group-hover:text-white dark:hover:text-white text-sm"
           href="#"
+          @click.prevent="logout"
         >
           <svg
             class="h-5 w-5 group-hover:fill-red-600 dark:fill-gray-600 transition-colors duration-200"
@@ -153,13 +154,20 @@
               d="M19 21H5C3.89543 21 3 20.1046 3 19V15H5V19H19V5H5V9H3V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21ZM11 16V13H3V11H11V8L16 12L11 16Z"
             ></path>
           </svg>
-          <span class="font-QuicksandMedium">log out</span>
+          <span class="font-QuicksandMedium">Log Out</span>
         </div>
       </div>
     </div>
   </aside>
 </template>
 <script>
-export default {}
+export default {
+  methods: {
+    logout() {
+      localStorage.clear()
+      this.$router.push('/login')
+    }
+  }
+}
 </script>
 <style></style>

@@ -20,7 +20,7 @@
           />
         </svg>
       </div>
-      <form class="p-12 md:p-24">
+      <form class="p-12 md:p-24" @submit.prevent="handleRegister">
         <div class="flex items-center text-lg mb-6 md:mb-8">
           <svg class="absolute ml-3" width="24" viewBox="0 0 24 24">
             <path
@@ -71,7 +71,7 @@
           />
         </div>
         <button
-          class="bg-red-500 text-white active:bg-red-600 font-medium p-2 md:p-4 text-white uppercase w-full"
+          class="bg-red-500 active:bg-red-600 font-medium p-2 md:p-4 text-white uppercase w-full"
         >
           Register
         </button>
@@ -92,6 +92,8 @@
 </template>
 
 <script>
+import { mapActions } from 'pinia'
+import { useOrderStore } from '../stores/orderStore'
 export default {
   name: 'RegisterPage',
   data() {
@@ -102,12 +104,14 @@ export default {
     }
   },
   methods: {
-    register() {
+    ...mapActions(useOrderStore, ['register']),
+    handleRegister() {
       const data = {
         name: this.name,
         email: this.email,
         password: this.password
       }
+      this.register(data)
     }
   }
 }

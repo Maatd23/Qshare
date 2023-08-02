@@ -22,7 +22,7 @@ class UserController {
   static async register(req, res, next) {
     try {
       const { name, email, password, phoneNumber, address } = req.body;
-
+      console.log(req.body);
       const user = await User.create({
         name,
         email,

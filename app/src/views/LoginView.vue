@@ -10,7 +10,7 @@
           />
         </svg>
       </div>
-      <form class="p-12 md:p-24">
+      <form class="p-12 md:p-24" @submit.prevent="handleLogin">
         <div class="flex items-center text-lg mb-6 md:mb-8">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +39,7 @@
             />
           </svg>
           <input
+            v-model="password"
             type="password"
             id="password"
             class="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full"
@@ -46,7 +47,7 @@
           />
         </div>
         <button
-          class="bg-red-500 text-white active:bg-red-600 font-medium p-2 md:p-4 text-white uppercase w-full"
+          class="bg-red-500 text-white active:bg-red-600 font-medium p-2 md:p-4 uppercase w-full"
         >
           Login
         </button>
@@ -55,7 +56,7 @@
           <div class="text-black select-none">
             Don't have an account?
             <span
-              class="cursor-pointer underline text-sm hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all"
+              class="underline text-sm hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all"
               @click.prevent="this.$router.push('/register')"
               >Get Started</span
             >
@@ -68,6 +69,7 @@
 
 <script>
 import { mapActions } from 'pinia'
+import { useOrderStore } from '../stores/orderStore'
 export default {
   name: 'LoginPage',
   data() {

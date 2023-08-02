@@ -5,7 +5,7 @@ class OrderController {
     const { id } = req.user;
     try {
       const Orders = await Order.findAll({
-        where: { CostumerId: id },
+        where: { userId: id },
       });
 
       res.status(200).json(Orders);
@@ -16,6 +16,7 @@ class OrderController {
   }
   static async addOrder(req, res, next) {
     const { productName, stock, price } = req.body;
+    console.log(req.body);
     const { id } = req.user;
     try {
       const newOrder = {

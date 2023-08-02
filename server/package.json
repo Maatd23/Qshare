@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "db-test": "sequelize db:drop --env test && sequelize db:create --env test && sequelize db:migrate --env test",
+    "db-dev": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "npx nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "google-auth-library": "^9.0.0",
+    "jsonwebtoken": "^9.0.1",
+    "pg": "^8.11.1",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "sequelize-cli": "^6.6.1"
+  }
+}

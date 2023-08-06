@@ -93,4 +93,4 @@ To add a new order, visit the `/addorder` page or click the `Add Order` button o
 
 To log out, click on the profile button at the bottom left of the sidebar. There, you will find a logout button to end your session.
 
-Thank you for using QShare! If you encounter any issues or have any questions, please feel free to reach out for support. Enjoy managing your orders with ease!
+Thank you for using my app! If you encounter any issues or have any questions, please feel free to reach out for support. Enjoy managing your orders with ease!

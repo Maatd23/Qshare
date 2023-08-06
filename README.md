@@ -1,6 +1,6 @@
 # QShare - README
 
-QShare is a web application that allows users to manage their orders. Follow the steps below to run the program:
+this web application that allows users to manage their orders. Follow the steps below to run the program:
 
 ## Prerequisites
 

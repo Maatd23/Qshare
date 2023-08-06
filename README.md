@@ -56,7 +56,7 @@ npm run start
 1. Change into the app directory:
 
 ```
-cd ../app
+cd app
 ```
 
 2. Install the required dependencies:
